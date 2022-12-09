@@ -3,12 +3,13 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import CreatePost from "./pages/CreatePost";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "./firebase-config";
 
 function App() {
   const [isAuth, setIsAuth] = useState(false);
+  const [currentUser, setCurrentUser] = useState();
 
   const logOut = () => {
     signOut(auth).then(() => {
@@ -17,6 +18,13 @@ function App() {
       window.location.reload();
     });
   };
+
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      setCurrentUser(user);
+    });
+  }, []);
+
   return (
     <Router>
       <nav>
@@ -25,7 +33,10 @@ function App() {
         {!isAuth ? (
           <Link to="/login"> Login </Link>
         ) : (
-          <button onClick={logOut}> Log Out </button>
+          <>
+            <p>{currentUser.email}</p>
+            <button onClick={logOut}> Log Out </button>
+          </>
         )}
       </nav>
 
