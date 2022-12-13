@@ -29,11 +29,11 @@ function App() {
     <Router>
       <nav>
         <Link to="/"> Home </Link>
-        <Link to="/createpost"> Create Post </Link>
         {!isAuth ? (
           <Link to="/login"> Login </Link>
         ) : (
           <>
+            <Link to="/createpost"> Create Post </Link>
             <p>{currentUser.email}</p>
             <button onClick={logOut}> Log Out </button>
           </>
