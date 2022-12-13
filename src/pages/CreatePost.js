@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../firebase-config";
+import { useNavigate } from "react-router-dom";
 
 function CreatePost() {
   const [title, setTitle] = useState("");
@@ -8,10 +9,12 @@ function CreatePost() {
   const [author, setAuthor] = useState("");
 
   const postCollectionRef = collection(db, "posts");
+  let navigate = useNavigate();
 
   const createPost = async () => {
     await addDoc(postCollectionRef, { title, postText, author });
-  }
+    navigate("/");
+  };
 
   return (
     <div className="cpPage">
@@ -44,7 +47,7 @@ function CreatePost() {
             }}
           />
         </div>
-        <button onClick={ createPost }>Submit Post</button>
+        <button onClick={createPost}>Submit Post</button>
       </div>
     </div>
   );
