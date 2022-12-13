@@ -1,8 +1,17 @@
 import React, { useState } from "react";
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "../firebase-config";
 
 function CreatePost() {
   const [title, setTitle] = useState("");
   const [postText, setPostText] = useState("");
+  const [author, setAuthor] = useState("");
+
+  const postCollectionRef = collection(db, "posts");
+
+  const createPost = async () => {
+    await addDoc(postCollectionRef, { title, postText, author });
+  }
 
   return (
     <div className="cpPage">
@@ -26,7 +35,16 @@ function CreatePost() {
             }}
           />
         </div>
-        <button>Submit Post</button>
+        <div className="author">
+          <label>Author: </label>
+          <input
+            placeholder="Author..."
+            onChange={(e) => {
+              setAuthor(e.target.value);
+            }}
+          />
+        </div>
+        <button onClick={ createPost }>Submit Post</button>
       </div>
     </div>
   );
