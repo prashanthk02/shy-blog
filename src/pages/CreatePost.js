@@ -4,6 +4,7 @@ function CreatePost() {
   return (
     <div className="cpPage">
       <div className="cpContainer">
+        <h1>Create a Post</h1>
         <div className="title">
           <label>Title: </label>
           <input placeholder="Title..." />
