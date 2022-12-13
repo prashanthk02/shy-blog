@@ -13,6 +13,7 @@ function CreatePost() {
           <label>Post: </label>
           <textarea placeholder="Post..." />
         </div>
+        <button>Submit Post</button>
       </div>
     </div>
   );
