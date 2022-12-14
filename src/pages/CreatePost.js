@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../firebase-config";
 import { useNavigate } from "react-router-dom";
 
-function CreatePost() {
+function CreatePost({ isAuth }) {
   const [title, setTitle] = useState("");
   const [postText, setPostText] = useState("");
   const [author, setAuthor] = useState("");
@@ -15,6 +15,12 @@ function CreatePost() {
     await addDoc(postCollectionRef, { title, postText, author });
     navigate("/");
   };
+
+  useEffect(() => {
+    if (!isAuth) {
+      navigate("/login");
+    }
+  }, []);
 
   return (
     <div className="cpPage">
