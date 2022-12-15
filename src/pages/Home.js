@@ -10,19 +10,29 @@ function Home() {
     const getPosts = async () => {
       const data = await getDocs(postCollectionRef);
       setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-      console.log(postList)
+      console.log(postList);
     };
 
     getPosts();
   }, []);
 
-  return (<div className="homePage">
-    {postList.map((post) =>{
-      return (
-        <div className="post">{post.title}</div>
-      )
-    })}
-  </div>);
+  return (
+    <div className="homePage">
+      {postList.map((post) => {
+        return (
+          <div className="post" key={post.id}>
+            <div className="title">
+              <h1>{post.title}</h1>
+            </div>
+            <div>{post.postText}</div>
+            <div>
+              <h3>@{post.author}</h3>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
 }
 
 export default Home;
