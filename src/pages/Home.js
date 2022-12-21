@@ -4,7 +4,7 @@ import { db } from "../firebase-config";
 
 import "../styles/Home.scss";
 
-function Home() {
+function Home({ isAuth }) {
   const [postList, setPostList] = useState([]);
   const postCollectionRef = collection(db, "posts");
 
@@ -31,15 +31,17 @@ function Home() {
             <div className="title">
               <h1>{post.title}</h1>
             </div>
-            <div className="delete">
-              <button
-                onClick={() => {
-                  deletePost(post.id);
-                }}
-              >
-                &#128465;
-              </button>
-            </div>
+            {isAuth && (
+              <div className="delete">
+                <button
+                  onClick={() => {
+                    deletePost(post.id);
+                  }}
+                >
+                  &#128465;
+                </button>
+              </div>
+            )}
             <div className="postText">{post.postText}</div>
             <div className="author">
               <h3>@{post.author}</h3>
