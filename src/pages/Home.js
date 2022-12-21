@@ -12,7 +12,7 @@ function Home() {
     const getPosts = async () => {
       const data = await getDocs(postCollectionRef);
       setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-      console.log(postList);
+      //console.log(postList);
     };
 
     getPosts();
