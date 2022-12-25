@@ -15,3 +15,9 @@
   overflow: scroll;
   background-color: rgba(255, 158, 47, 0.18);
 }
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

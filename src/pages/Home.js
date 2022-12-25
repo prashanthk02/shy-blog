@@ -30,18 +30,18 @@ function Home({ isAuth }) {
           <div className="post" key={post.id}>
             <div className="title">
               <h1>{post.title}</h1>
+              {isAuth && (
+                <div className="delete">
+                  <button
+                    onClick={() => {
+                      deletePost(post.id);
+                    }}
+                  >
+                    X
+                  </button>
+                </div>
+              )}
             </div>
-            {isAuth && (
-              <div className="delete">
-                <button
-                  onClick={() => {
-                    deletePost(post.id);
-                  }}
-                >
-                  &#128465;
-                </button>
-              </div>
-            )}
             <div className="postText">{post.postText}</div>
             <div className="author">
               <h3>@{post.author}</h3>
