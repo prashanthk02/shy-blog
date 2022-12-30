@@ -12,11 +12,9 @@ function Login({ setIsAuth }) {
   const signIn = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        // Signed in
         const user = userCredential.user;
         console.log(user);
         alert("signIn success");
-        // ...
         localStorage.setItem("isAuth", true);
         setIsAuth(true);
         navigate("/")

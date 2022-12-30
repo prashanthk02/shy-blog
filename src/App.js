@@ -9,7 +9,7 @@ import { auth } from "./firebase-config";
 
 function App() {
   const [isAuth, setIsAuth] = useState(false);
-  const [currentUser, setCurrentUser] = useState();
+  const [currentUserState, setCurrentUserState] = useState();
 
   const logOut = () => {
     signOut(auth).then(() => {
@@ -20,8 +20,8 @@ function App() {
   };
 
   useEffect(() => {
-    auth.onAuthStateChanged((user) => {
-      setCurrentUser(user);
+    auth.onAuthStateChanged((currentUser) => {
+      setCurrentUserState(currentUser);
     });
   }, []);
 
@@ -34,7 +34,7 @@ function App() {
         ) : (
           <>
             <Link to="/createpost"> Create Post </Link>
-            <p>{currentUser.email}</p>
+            <p>{currentUserState.email}</p>
             <button onClick={logOut}> Log Out </button>
           </>
         )}
