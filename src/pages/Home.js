@@ -12,7 +12,6 @@ function Home({ isAuth }) {
     const getPosts = async () => {
       const data = await getDocs(postCollectionRef);
       setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-      //console.log(postList);
     };
 
     getPosts();

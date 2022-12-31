@@ -14,13 +14,11 @@ function Login({ setIsAuth }) {
       .then((userCredential) => {
         const user = userCredential.user;
         console.log(user);
-        alert("signIn success");
         localStorage.setItem("isAuth", true);
         setIsAuth(true);
         navigate("/")
       })
       .catch((error) => {
-        //const errorCode = error.code;
         const errorMessage = error.message;
         alert(errorMessage);
       });
