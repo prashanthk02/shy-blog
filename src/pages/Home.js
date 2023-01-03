@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getDocs, collection, deleteDoc, doc } from "firebase/firestore";
 import { db } from "../firebase-config";
 
-import "../styles/Home.scss";
+import "../styles/home.scss";
 
 function Home({ isAuth }) {
   const [postList, setPostList] = useState([]);
