@@ -29,15 +29,6 @@ function App() {
     <Router>
       <nav>
         <Link to="/"> Home </Link>
-        {!isAuth ? (
-          <Link to="/login"> Login </Link>
-        ) : (
-          <>
-            <Link to="/createpost"> Create Post </Link>
-            <p>{currentUserState.email}</p>
-            <button onClick={logOut}> Log Out </button>
-          </>
-        )}
       </nav>
 
       <Routes>
@@ -45,6 +36,18 @@ function App() {
         <Route path="/createpost" element={<CreatePost isAuth={isAuth} />} />
         <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
       </Routes>
+
+      <footer>
+        {!isAuth ? (
+          <Link to="/login"> Login </Link>
+        ) : (
+          <>
+            <Link to="/createpost"> Create Post </Link>
+            <p>{currentUserState.email}</p>
+            <button className="logoutBtn" onClick={logOut}> LogOut </button>
+          </>
+        )}
+      </footer>
     </Router>
   );
 }
