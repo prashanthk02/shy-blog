@@ -8,8 +8,8 @@ import { signOut } from "firebase/auth";
 import { auth } from "./firebase-config";
 
 function App() {
-  const [isAuth, setIsAuth] = useState(false);
-  const [currentUserState, setCurrentUserState] = useState();
+  const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
+  const [currentUserState, setCurrentUserState] = useState(localStorage.getItem("user"));
 
   const logOut = () => {
     signOut(auth).then(() => {

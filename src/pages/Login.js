@@ -17,6 +17,7 @@ function Login({ setIsAuth }) {
         const user = userCredential.user;
         console.log(user);
         localStorage.setItem("isAuth", true);
+        localStorage.setItem("user", JSON.stringify(user));
         setIsAuth(true);
         navigate("/")
       })
