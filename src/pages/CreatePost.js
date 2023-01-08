@@ -26,8 +26,8 @@ function CreatePost({ isAuth }) {
 
   return (
     <div className="cpPage">
+      <h1>Create a Post</h1>
       <div className="cpContainer">
-        <h1>Create a Post</h1>
         <div className="titleText">
           <label>Title: </label>
           <input
