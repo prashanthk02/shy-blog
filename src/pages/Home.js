@@ -20,6 +20,7 @@ function Home({ isAuth }) {
   const deletePost = async (id) => {
     const postDoc = doc(db, "posts", id);
     await deleteDoc(postDoc);
+    window.location.reload();
   };
 
   return (
