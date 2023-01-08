@@ -26,7 +26,7 @@ function CreatePost({ isAuth }) {
     <div className="cpPage">
       <div className="cpContainer">
         <h1>Create a Post</h1>
-        <div className="title">
+        <div className="titleText">
           <label>Title: </label>
           <input
             placeholder="Title..."
@@ -35,7 +35,7 @@ function CreatePost({ isAuth }) {
             }}
           />
         </div>
-        <div className="post">
+        <div className="postText">
           <label>Post: </label>
           <textarea
             placeholder="Post..."
@@ -44,7 +44,7 @@ function CreatePost({ isAuth }) {
             }}
           />
         </div>
-        <div className="author">
+        <div className="authorText">
           <label>Author: </label>
           <input
             placeholder="Author..."
