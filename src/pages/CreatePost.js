@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import "../styles/createPost.scss"
 
 function CreatePost({ isAuth }) {
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState("A");
   const [title, setTitle] = useState("");
   const [postText, setPostText] = useState("");
   const [author, setAuthor] = useState("");
@@ -32,12 +32,15 @@ function CreatePost({ isAuth }) {
 
        <div className="categoryText">
           <label>Category: </label>
-          <input
-            placeholder="Category..."
-            onChange={(e) => {
+          <select onChange={(e) => {
               setCategory(e.target.value);
-            }}
-          />
+              }
+            }
+          >
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+          </select>
         </div>
 
         <div className="titleText">
