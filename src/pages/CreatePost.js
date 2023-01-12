@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import "../styles/createPost.scss"
 
 function CreatePost({ isAuth }) {
+  const [category, setCategory] = useState("");
   const [title, setTitle] = useState("");
   const [postText, setPostText] = useState("");
   const [author, setAuthor] = useState("");
@@ -14,7 +15,7 @@ function CreatePost({ isAuth }) {
   let navigate = useNavigate();
 
   const createPost = async () => {
-    await addDoc(postCollectionRef, { title, postText, author });
+    await addDoc(postCollectionRef, { category, title, postText, author });
     navigate("/");
   };
 
@@ -28,6 +29,17 @@ function CreatePost({ isAuth }) {
     <div className="cpPage">
       <h1>Create a Post</h1>
       <div className="cpContainer">
+
+       <div className="categoryText">
+          <label>Category: </label>
+          <input
+            placeholder="Category..."
+            onChange={(e) => {
+              setCategory(e.target.value);
+            }}
+          />
+        </div>
+
         <div className="titleText">
           <label>Title: </label>
           <input
