@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { addDoc, collection } from "firebase/firestore";
-import { db } from "../firebase-config";
+import { auth, db } from "../firebase-config";
 import { useNavigate } from "react-router-dom";
 
 import "../styles/createPost.scss"
@@ -15,8 +15,9 @@ function CreatePost({ isAuth }) {
   let navigate = useNavigate();
 
   const createPost = async () => {
-    let date = new Date();
-    await addDoc(postCollectionRef, { category, title, postText, author, date });
+    const date = new Date();
+    const email = auth.currentUser.email;
+    await addDoc(postCollectionRef, { category, title, postText, author, email, date });
     navigate("/");
   };
 
