@@ -15,7 +15,8 @@ function CreatePost({ isAuth }) {
   let navigate = useNavigate();
 
   const createPost = async () => {
-    await addDoc(postCollectionRef, { category, title, postText, author });
+    let date = new Date();
+    await addDoc(postCollectionRef, { category, title, postText, author, date });
     navigate("/");
   };
 

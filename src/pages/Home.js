@@ -45,6 +45,7 @@ function Home({ isAuth }) {
             <div className="postText">{post.postText}</div>
             <div className="author">
               <h3>@{post.author}</h3>
+              {/* <h5>{post.date.toDate()}</h5> */}
             </div>
           </div>
         );
