@@ -28,6 +28,7 @@ function Home({ isAuth }) {
       {postList.map((post) => {
         return (
           <div className="post" key={post.id}>
+            <h6>{post.category}</h6>
             <div className="title">
               <h1>{post.title}</h1>
               {isAuth && (
