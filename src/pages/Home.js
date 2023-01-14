@@ -7,6 +7,7 @@ import "../styles/home.scss";
 function Home({ isAuth }) {
   const [postList, setPostList] = useState([]);
   const postCollectionRef = collection(db, "posts");
+  const sortedPosts = postList?.sort((a,b)=> b.date - a.date);
 
   useEffect(() => {
     const getPosts = async () => {
@@ -25,7 +26,7 @@ function Home({ isAuth }) {
 
   return (
     <div className="posts">
-      {postList.map((post) => {
+      {sortedPosts.map((post) => {
         return (
           <div className="post" key={post.id}>
             <h6>{post.category}</h6>
