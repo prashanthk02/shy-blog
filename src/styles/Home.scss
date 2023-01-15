@@ -15,9 +15,10 @@
   border-radius: 4px;
   width: 600px;
   height: auto;
+  max-height: 500px;
   margin: 8px;
   padding: 5px 20px;
-  overflow: scroll;
+  overflow: auto;
   background-color: #D2D4C8;
 }
 
