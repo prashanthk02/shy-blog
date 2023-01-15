@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getDocs, collection, deleteDoc, doc } from "firebase/firestore";
-import { db } from "../firebase-config";
+import { auth, db } from "../firebase-config";
 
 import "../styles/home.scss";
 
@@ -32,7 +32,7 @@ function Home({ isAuth }) {
             <h6>{post.category}</h6>
             <div className="title">
               <h1>{post.title}</h1>
-              {isAuth && (
+              {isAuth && post.email === auth.currentUser.email && (
                 <div className="delete">
                   <button
                     onClick={() => {
