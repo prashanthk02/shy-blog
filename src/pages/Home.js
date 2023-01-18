@@ -61,8 +61,8 @@
 import React from "react";
 import Posts from "../components/Posts";
 
-export default function Home() {
+export default function Home({isAuth}) {
   return (
-    <Posts />
+    <Posts isAuth={isAuth} />
   );
 }

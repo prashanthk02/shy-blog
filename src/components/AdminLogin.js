@@ -3,7 +3,7 @@ import { auth } from "../firebase-config";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
-import "../styles/login.scss";
+import "../styles/adminLogin.scss";
 
 function AdminLogin({ setIsAuth }) {
   const [email, setEmail] = useState("");
