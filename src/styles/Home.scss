@@ -22,8 +22,21 @@
   background-color: #D2D4C8;
 }
 
-.title {
+.postDate {
+  border: 1px solid red;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+// .title {
+//   border: 1px solid red;
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+// }
+
+.postDelete {
+  border: none;
+  background: none;
 }

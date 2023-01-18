@@ -29,25 +29,25 @@ function Home({ isAuth }) {
       {sortedPosts.map((post) => {
         return (
           <div className="post" key={post.id}>
-            <h6>{post.category}</h6>
-            <div className="title">
-              <h1>{post.title}</h1>
+            <div className="postDate">
+              <h6>{post.date.toDate().toDateString()}</h6>
               {isAuth && post.email === auth.currentUser.email && (
-                <div className="delete">
-                  <button
+                  <button className="postDelete"
                     onClick={() => {
                       deletePost(post.id);
                     }}
                   >
                     X
                   </button>
-                </div>
               )}
+            </div>
+            <h6>{post.category}</h6>
+            <div className="title">
+              <h1>{post.title}</h1>
             </div>
             <div className="postText">{post.postText}</div>
             <div className="author">
               <h3>@{post.author}</h3>
-              <h6>{post.date.toDate().toDateString()}</h6>
             </div>
           </div>
         );
