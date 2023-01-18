@@ -58,6 +58,7 @@ function CreatePost({ isAuth }) {
           <label>Post: </label>
           <textarea
             placeholder="Post..."
+            type="text"
             onChange={(e) => {
               setPostText(e.target.value);
             }}
