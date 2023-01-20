@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getDocs, collection, deleteDoc, doc } from "firebase/firestore";
 import { auth, db } from "../firebase-config";
 
+import PostItem from "./PostItem";
 import "../styles/posts.scss";
 
 function Posts({ isAuth, filterValue }) {
@@ -29,39 +30,20 @@ function Posts({ isAuth, filterValue }) {
     getPosts();
   }, []);
 
-  const deletePost = async (id) => {
-    const postDoc = doc(db, "posts", id);
-    await deleteDoc(postDoc);
-    window.location.reload();
-  };
-
   return (
     <div className="posts">
       {filteredPosts.map((post) => {
         return (
-          <div className="post" key={post.id}>
-            <div className="postDate">
-              <h6>{post.date.toDate().toDateString()}</h6>
-              {isAuth && post.email === auth.currentUser.email && (
-                <button
-                  className="postDelete"
-                  onClick={() => {
-                    deletePost(post.id);
-                  }}
-                >
-                  X
-                </button>
-              )}
-            </div>
-            <h6>{post.category}</h6>
-            <div className="title">
-              <h1>{post.title}</h1>
-            </div>
-            <div className="postText">{post.postText}</div>
-            <div className="author">
-              <h3>@{post.author}</h3>
-            </div>
-          </div>
+          <PostItem
+            key={post.id}
+            date={post.date}
+            email={post.email}
+            category={post.category}
+            title={post.title}
+            postText={post.postText}
+            author={post.author}
+            isAuth={isAuth}
+          />
         );
       })}
     </div>
