@@ -4,10 +4,22 @@ import { auth, db } from "../firebase-config";
 
 import "../styles/posts.scss";
 
-function Posts({ isAuth }) {
+function Posts({ isAuth, filterValue }) {
   const [postList, setPostList] = useState([]);
   const postCollectionRef = collection(db, "posts");
   const sortedPosts = postList?.sort((a,b)=> b.date - a.date);
+  const filteredPosts = sortedPosts.filter((post) => {
+    if(filterValue === "A"){
+      return post.category === "A";
+    } else if(filterValue === "A"){
+      return post.category === "B"
+    } else if(filterValue === "C") {
+      return post.category === "C"
+    } else {
+      return post;
+    }
+
+  })
 
   useEffect(() => {
     const getPosts = async () => {
@@ -26,7 +38,7 @@ function Posts({ isAuth }) {
 
   return (
     <div className="posts">
-      {sortedPosts.map((post) => {
+      {filteredPosts.map((post) => {
         return (
           <div className="post" key={post.id}>
             <div className="postDate">
