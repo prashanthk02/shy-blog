@@ -1,3 +1,9 @@
-.filter {
-  
+.filter select {
+  background: none;
+  border: 1px solid black;
+  border-radius: 2px;
+  width: 60px;
+  height: 25px;
+  cursor: pointer;
+  font-size: 18px;
 }
