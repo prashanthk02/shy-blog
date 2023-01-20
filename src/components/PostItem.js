@@ -5,6 +5,7 @@ import "../styles/posts.scss";
 
 export default function PostItem(props) {
   const isAuth = props.isAuth;
+  const id = props.id;
 
   const deletePost = async (id) => {
     const postDoc = doc(db, "posts", id);
@@ -13,14 +14,14 @@ export default function PostItem(props) {
   };
 
   return (
-    <div className="post" key={props.id}>
+    <div className="post" key={id}>
       <div className="postDate">
         <h6>{props.date.toDate().toDateString()}</h6>
         {isAuth && props.email === auth.currentUser.email && (
           <button
             className="postDelete"
             onClick={() => {
-              deletePost(props.id);
+              deletePost(id);
             }}
           >
             X

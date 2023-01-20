@@ -38,6 +38,7 @@ function Posts({ isAuth, filterValue }) {
             key={post.id}
             date={post.date}
             email={post.email}
+            id={post.id}
             category={post.category}
             title={post.title}
             postText={post.postText}
