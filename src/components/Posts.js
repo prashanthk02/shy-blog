@@ -7,19 +7,18 @@ import "../styles/posts.scss";
 function Posts({ isAuth, filterValue }) {
   const [postList, setPostList] = useState([]);
   const postCollectionRef = collection(db, "posts");
-  const sortedPosts = postList?.sort((a,b)=> b.date - a.date);
+  const sortedPosts = postList?.sort((a, b) => b.date - a.date);
   const filteredPosts = sortedPosts.filter((post) => {
-    if(filterValue === "A"){
+    if (filterValue === "A") {
       return post.category === "A";
-    } else if(filterValue === "A"){
-      return post.category === "B"
-    } else if(filterValue === "C") {
-      return post.category === "C"
+    } else if (filterValue === "B") {
+      return post.category === "B";
+    } else if (filterValue === "C") {
+      return post.category === "C";
     } else {
       return post;
     }
-
-  })
+  });
 
   useEffect(() => {
     const getPosts = async () => {
@@ -44,13 +43,14 @@ function Posts({ isAuth, filterValue }) {
             <div className="postDate">
               <h6>{post.date.toDate().toDateString()}</h6>
               {isAuth && post.email === auth.currentUser.email && (
-                  <button className="postDelete"
-                    onClick={() => {
-                      deletePost(post.id);
-                    }}
-                  >
-                    X
-                  </button>
+                <button
+                  className="postDelete"
+                  onClick={() => {
+                    deletePost(post.id);
+                  }}
+                >
+                  X
+                </button>
               )}
             </div>
             <h6>{post.category}</h6>
