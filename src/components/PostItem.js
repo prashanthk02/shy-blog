@@ -32,6 +32,9 @@ export default function PostItem(props) {
       <div className="title">
         <h1>{props.title}</h1>
       </div>
+      {props.url && <div className="postImage">
+        <img src={props.url} alt={props.title} width="300" height="200" />
+      </div>}
       <div className="postText">{props.postText}</div>
       <div className="author">
         <h3>@{props.author}</h3>

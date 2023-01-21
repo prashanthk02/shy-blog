@@ -10,6 +10,7 @@ function WritePost({ isAuth }) {
   const [title, setTitle] = useState("");
   const [postText, setPostText] = useState("");
   const [author, setAuthor] = useState("");
+  const [url, setUrl] = useState("");
 
   const postCollectionRef = collection(db, "posts");
   let navigate = useNavigate();
@@ -17,7 +18,7 @@ function WritePost({ isAuth }) {
   const writePost = async () => {
     const date = new Date();
     const email = auth.currentUser.email;
-    await addDoc(postCollectionRef, { category, title, postText, author, email, date });
+    await addDoc(postCollectionRef, { category, title, postText, author, email, date, url });
     navigate("/");
   };
 
@@ -73,6 +74,17 @@ function WritePost({ isAuth }) {
             }}
           />
         </div>
+
+        <div className="imgUrl">
+          <label>Image URL: </label>
+          <input
+            placeholder="url..."
+            onChange={(e) => {
+              setUrl(e.target.value);
+            }}
+          />
+        </div>
+
         <button onClick={writePost}>Submit Post</button>
       </div>
     </div>

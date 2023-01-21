@@ -43,6 +43,7 @@ function Posts({ isAuth, filterValue }) {
             title={post.title}
             postText={post.postText}
             author={post.author}
+            url={post.url}
             isAuth={isAuth}
           />
         );
