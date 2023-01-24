@@ -8,6 +8,8 @@ import { useEffect, useState } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "./firebase-config";
 
+// import PostCard from "./components/PostCard";
+
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
   const [currentUserState, setCurrentUserState] = useState(localStorage.getItem("user"));
@@ -42,6 +44,7 @@ function App() {
         <Route path="/" element={<Home isAuth={isAuth} filterValue={filterValue} />} />
         <Route path="/createpost" element={<CreatePost isAuth={isAuth} />} />
         <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
+        {/* <Route path="/post" element={<PostCard />}/> */}
       </Routes>
 
       <footer>

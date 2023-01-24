@@ -32,6 +32,7 @@ function Posts({ isAuth, filterValue }) {
 
   return (
     <div className="posts">
+      <div>Hellooooo</div>
       {filteredPosts.map((post) => {
         return (
           <PostItem
