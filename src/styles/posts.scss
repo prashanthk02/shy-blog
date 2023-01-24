@@ -59,3 +59,25 @@
     }
   }
 }
+
+.postCards {
+  border: 1px solid red;
+  margin: 30px;
+  padding: 15px;
+  display: grid;
+  grid-template-columns:auto auto;
+  column-gap: 30px;
+  row-gap: 30px;
+}
+
+.postCard {
+  border: 1px solid green;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    text-align: center;
+  }
+}

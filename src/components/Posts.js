@@ -32,7 +32,17 @@ function Posts({ isAuth, filterValue }) {
 
   return (
     <div className="posts">
-      <div>Hellooooo</div>
+      {/* create post card in div and later on click render post item */}
+      <div className="postCards">
+        {filteredPosts.map((post) => {
+          return (
+            <div className="postCard" key={post.id}>
+              <img src={post.url} alt={post.title} width="300" height="200" />
+              <span>{post.title}</span>
+            </div>
+          );
+        })}
+      </div>
       {filteredPosts.map((post) => {
         return (
           <PostItem
