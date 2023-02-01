@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "./firebase-config";
 
+import SinglePost from "./pages/SinglePost";
 // import PostCard from "./components/PostCard";
 
 function App() {
@@ -44,7 +45,7 @@ function App() {
         <Route path="/" element={<Home isAuth={isAuth} filterValue={filterValue} />} />
         <Route path="/createpost" element={<CreatePost isAuth={isAuth} />} />
         <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
-        {/* <Route path="/post" element={<PostCard />}/> */}
+        <Route path="/post/:id" element={<SinglePost />} />
       </Routes>
 
       <footer>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getDocs, collection } from "firebase/firestore";
 import { db } from "../firebase-config";
+import { Link } from "react-router-dom";
 
 import PostItem from "./PostItem";
 import "../styles/posts.scss";
@@ -37,8 +38,10 @@ function Posts({ isAuth, filterValue }) {
         {filteredPosts.map((post) => {
           return (
             <div className="postCard" key={post.id} onClick={() => console.log(post.id)}>
-              <img src={post.url} alt={post.title} width="300" height="200" />
-              <span>{post.title}</span>
+              <Link to={`/post/${post.id}`}>
+                <img src={post.url} alt={post.title} width="300" height="200" />
+                <span>{post.title}</span>
+              </Link>
             </div>
           );
         })}
