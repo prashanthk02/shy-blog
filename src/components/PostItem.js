@@ -16,7 +16,7 @@ export default function PostItem(props) {
   return (
     <div className="post" key={id}>
       <div className="postDate">
-        <h6>{props.date.toDate().toDateString()}</h6>
+        {/* <h6>{props.date.toDate().toDateString()}</h6> */}
         {isAuth && props.email === auth.currentUser.email && (
           <button
             className="postDelete"

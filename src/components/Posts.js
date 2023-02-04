@@ -37,7 +37,7 @@ function Posts({ isAuth, filterValue }) {
       <div className="postCards">
         {filteredPosts.map((post) => {
           return (
-            <div className="postCard" key={post.id} onClick={() => console.log(post.id)}>
+            <div className="postCard" key={post.id} onClick={() => localStorage.setItem(post.id, JSON.stringify(post))}>
               <Link to={`/post/${post.id}`}>
                 <img src={post.url} alt={post.title} width="300" height="200" />
                 <span>{post.title}</span>
@@ -46,7 +46,7 @@ function Posts({ isAuth, filterValue }) {
           );
         })}
       </div>
-      {filteredPosts.map((post) => {
+      {/* {filteredPosts.map((post) => {
         return (
           <PostItem
             key={post.id}
@@ -61,7 +61,7 @@ function Posts({ isAuth, filterValue }) {
             isAuth={isAuth}
           />
         );
-      })}
+      })} */}
     </div>
   );
 }
