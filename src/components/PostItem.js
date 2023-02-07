@@ -4,6 +4,7 @@ import { auth, db } from "../firebase-config";
 import "../styles/posts.scss";
 
 export default function PostItem(props) {
+  const currentUserState = props.currentUserState
   const isAuth = props.isAuth;
   const id = props.id;
 
@@ -17,7 +18,7 @@ export default function PostItem(props) {
     <div className="post" key={id}>
       <div className="postDate">
         {/* <h6>{props.date.toDate().toDateString()}</h6> */}
-        {isAuth && props.email === auth.currentUser.email && (
+        {isAuth && props.email === currentUserState.email && (
           <button
             className="postDelete"
             onClick={() => {

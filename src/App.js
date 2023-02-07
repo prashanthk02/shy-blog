@@ -45,7 +45,7 @@ function App() {
         <Route path="/" element={<Home isAuth={isAuth} filterValue={filterValue} />} />
         <Route path="/createpost" element={<CreatePost isAuth={isAuth} />} />
         <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
-        <Route path="/post/:id" element={<SinglePost isAuth={isAuth} />} />
+        <Route path="/post/:id" element={<SinglePost isAuth={isAuth} currentUserState={currentUserState} />} />
       </Routes>
 
       <footer>
