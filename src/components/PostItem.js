@@ -1,12 +1,15 @@
 import React from "react";
 import { deleteDoc, doc } from "firebase/firestore";
-import { auth, db } from "../firebase-config";
+import { db } from "../firebase-config";
 import "../styles/posts.scss";
 
 export default function PostItem(props) {
   const currentUserState = props.currentUserState
   const isAuth = props.isAuth;
   const id = props.id;
+  const date = props.date;
+
+  console.log(date)
 
   const deletePost = async (id) => {
     const postDoc = doc(db, "posts", id);
@@ -17,7 +20,7 @@ export default function PostItem(props) {
   return (
     <div className="post" key={id}>
       <div className="postDate">
-        {/* <h6>{props.date.toDate().toDateString()}</h6> */}
+        <h6>{props.date}</h6>
         {isAuth && props.email === currentUserState.email && (
           <button
             className="postDelete"

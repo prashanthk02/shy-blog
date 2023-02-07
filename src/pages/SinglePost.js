@@ -7,8 +7,6 @@ export default function SinglePost({ isAuth, currentUserState }) {
   const post = localStorage.getItem(params.id);
   const postData = JSON.parse(post);
 
-  console.log(postData.email);
-
   return (
     <div>
       <PostItem

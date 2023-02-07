@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection, Timestamp } from "firebase/firestore";
 import { auth, db } from "../firebase-config";
 import { useNavigate } from "react-router-dom";
 
@@ -16,7 +16,7 @@ function WritePost({ isAuth }) {
   let navigate = useNavigate();
 
   const writePost = async () => {
-    const date = new Date();
+    const date = Timestamp.now();
     const email = auth.currentUser.email;
     await addDoc(postCollectionRef, { category, title, postText, author, email, date, url });
     navigate("/");
