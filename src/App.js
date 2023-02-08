@@ -11,7 +11,9 @@ import { auth } from "./firebase-config";
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
-  const [currentUserState, setCurrentUserState] = useState(localStorage.getItem("user"));
+  const [currentUserState, setCurrentUserState] = useState(
+    localStorage.getItem("user")
+  );
   const [filterValue, setFilterValue] = useState("All");
 
   const logOut = () => {
@@ -24,7 +26,7 @@ function App() {
 
   const filterValueSelected = (filter) => {
     setFilterValue(filter);
-  }
+  };
 
   useEffect(() => {
     auth.onAuthStateChanged((currentUser) => {
@@ -40,7 +42,10 @@ function App() {
       </nav>
 
       <Routes>
-        <Route path="/" element={<Home isAuth={isAuth} filterValue={filterValue} />} />
+        <Route
+          path="/"
+          element={<Home isAuth={isAuth} filterValue={filterValue} />}
+        />
         <Route path="/createpost" element={<CreatePost isAuth={isAuth} />} />
         <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
         <Route path="/post/:id" element={<SinglePost isAuth={isAuth} />} />
@@ -53,7 +58,9 @@ function App() {
           <>
             <Link to="/createpost"> Create Post </Link>
             <p>{currentUserState.email}</p>
-            <button className="logoutBtn" onClick={logOut}> LogOut </button>
+            <button className="logoutBtn" onClick={logOut}>
+              LogOut
+            </button>
           </>
         )}
       </footer>

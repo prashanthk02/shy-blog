@@ -3,7 +3,9 @@ import "../styles/posts.scss";
 
 export default function PostItem(props) {
   const id = props.id;
-  const date = new Date(props.date.seconds * 1000 + props.date.nanoseconds/1000000);
+  const date = new Date(
+    props.date.seconds * 1000 + props.date.nanoseconds / 1000000
+  );
 
   return (
     <div className="post" key={id}>
