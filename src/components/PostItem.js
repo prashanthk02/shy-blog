@@ -7,9 +7,7 @@ export default function PostItem(props) {
   const currentUserState = props.currentUserState
   const isAuth = props.isAuth;
   const id = props.id;
-  const date = props.date;
-
-  console.log(date)
+  const date = new Date(props.date.seconds * 1000 + props.date.nanoseconds/1000000);
 
   const deletePost = async (id) => {
     const postDoc = doc(db, "posts", id);
@@ -20,7 +18,7 @@ export default function PostItem(props) {
   return (
     <div className="post" key={id}>
       <div className="postDate">
-        <h6>{props.date}</h6>
+        <h6>{date.toDateString()}</h6>
         {isAuth && props.email === currentUserState.email && (
           <button
             className="postDelete"
