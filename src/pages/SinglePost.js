@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import PostItem from "../components/PostItem";
 
-export default function SinglePost({ isAuth, currentUserState }) {
+export default function SinglePost({ isAuth }) {
   const params = useParams();
   const post = localStorage.getItem(params.id);
   const postData = JSON.parse(post);
@@ -20,7 +20,6 @@ export default function SinglePost({ isAuth, currentUserState }) {
         author={postData.author}
         url={postData.url}
         isAuth={isAuth}
-        currentUserState={currentUserState}
       />
     </div>
   );
