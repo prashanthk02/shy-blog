@@ -67,22 +67,6 @@ function Posts({ isAuth, filterValue }) {
           );
         })}
       </div>
-      {/* {filteredPosts.map((post) => {
-        return (
-          <PostItem
-            key={post.id}
-            date={post.date}
-            email={post.email}
-            id={post.id}
-            category={post.category}
-            title={post.title}
-            postText={post.postText}
-            author={post.author}
-            url={post.url}
-            isAuth={isAuth}
-          />
-        );
-      })} */}
     </div>
   );
 }

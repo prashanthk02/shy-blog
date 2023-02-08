@@ -3,13 +3,11 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import CreatePost from "./pages/CreatePost";
+import SinglePost from "./pages/SinglePost";
 import FilterPost from "./components/FilterPost";
 import { useEffect, useState } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "./firebase-config";
-
-import SinglePost from "./pages/SinglePost";
-// import PostCard from "./components/PostCard";
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
