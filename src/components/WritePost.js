@@ -40,9 +40,10 @@ function WritePost({ isAuth }) {
               }
             }
           >
-            <option value="A">A</option>
-            <option value="B">B</option>
-            <option value="C">C</option>
+            <option value="Lifestyle">Life Style</option>
+            <option value="Travel">Travel</option>
+            <option value="Food">Food</option>
+            <option value="Social">Social</option>
           </select>
         </div>
 

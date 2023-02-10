@@ -1,8 +1,12 @@
 .filter button {
+  // border: 1px solid red;
   background: none;
   border: none;
-  width: 60px;
+  width: auto;
+  padding: 0px 10px;
   height: 25px;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #E0E2DB;
 }

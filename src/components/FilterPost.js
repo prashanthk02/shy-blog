@@ -6,31 +6,42 @@ export default function FilterPost({ filterValueSelected }) {
     <div className="filter">
       <button
         name="category"
+        value="Lifestyle"
+        onClick={(e) => filterValueSelected(e.target.value)}
+      >
+        Life Style
+      </button>
+
+      <button
+        name="category"
+        value="Travel"
+        onClick={(e) => filterValueSelected(e.target.value)}
+      >
+        Travel
+      </button>
+
+      <button
+        name="category"
+        value="Food"
+        onClick={(e) => filterValueSelected(e.target.value)}
+      >
+        Food
+      </button>
+
+      <button
+        name="category"
+        value="Social"
+        onClick={(e) => filterValueSelected(e.target.value)}
+      >
+        Social
+      </button>
+
+      <button
+        name="category"
         value="All"
         onClick={(e) => filterValueSelected(e.target.value)}
       >
         All
-      </button>
-      <button
-        name="category"
-        value="A"
-        onClick={(e) => filterValueSelected(e.target.value)}
-      >
-        A
-      </button>
-      <button
-        name="category"
-        value="B"
-        onClick={(e) => filterValueSelected(e.target.value)}
-      >
-        B
-      </button>
-      <button
-        name="category"
-        value="C"
-        onClick={(e) => filterValueSelected(e.target.value)}
-      >
-        C
       </button>
     </div>
   );

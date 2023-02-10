@@ -12,12 +12,14 @@ function Posts({ isAuth }) {
   const postCollectionRef = collection(db, "posts");
   const sortedPosts = postList?.sort((a, b) => b.date - a.date);
   const filteredPosts = sortedPosts.filter((post) => {
-    if (filterValue === "A") {
-      return post.category === "A";
-    } else if (filterValue === "B") {
-      return post.category === "B";
-    } else if (filterValue === "C") {
-      return post.category === "C";
+    if (filterValue === "Lifestyle") {
+      return post.category === "Lifestyle";
+    } else if (filterValue === "Travel") {
+      return post.category === "Travel";
+    } else if (filterValue === "Food") {
+      return post.category === "Food";
+    } else if (filterValue === "Social") {
+      return post.category === "Social";
     } else {
       return post;
     }
