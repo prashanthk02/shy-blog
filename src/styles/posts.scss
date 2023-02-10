@@ -51,6 +51,9 @@
   font-weight: bold;
   font-size: larger;
   cursor: pointer;
+  width: 300px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .postImage {
