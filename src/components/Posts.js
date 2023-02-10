@@ -4,9 +4,11 @@ import { auth, db } from "../firebase-config";
 import { Link } from "react-router-dom";
 
 import "../styles/posts.scss";
+import FilterPost from "./FilterPost";
 
-function Posts({ isAuth, filterValue }) {
+function Posts({ isAuth }) {
   const [postList, setPostList] = useState([]);
+  const [filterValue, setFilterValue] = useState("All");
   const postCollectionRef = collection(db, "posts");
   const sortedPosts = postList?.sort((a, b) => b.date - a.date);
   const filteredPosts = sortedPosts.filter((post) => {
@@ -27,6 +29,10 @@ function Posts({ isAuth, filterValue }) {
     window.location.reload();
   };
 
+  const filterValueSelected = (filter) => {
+    setFilterValue(filter);
+  };
+
   useEffect(() => {
     const getPosts = async () => {
       const data = await getDocs(postCollectionRef);
@@ -38,7 +44,9 @@ function Posts({ isAuth, filterValue }) {
 
   return (
     <div className="posts">
-      {/* create post card in div and later on click render post item */}
+      <div className="filter">
+        <FilterPost filterValueSelected={filterValueSelected} />
+      </div>
       <div className="postCards">
         {filteredPosts.map((post) => {
           return (

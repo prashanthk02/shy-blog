@@ -16,6 +16,13 @@
   background-blend-mode: luminosity;
 }
 
+.filter {
+  width: 98vw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
 .post {
   border: 1px solid red;
   border-radius: 4px;
@@ -36,13 +43,6 @@
   align-items: center;
   justify-content: space-between;
 }
-
-// .title {
-//   border: 1px solid red;
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-// }
 
 .postDelete {
   border: none;

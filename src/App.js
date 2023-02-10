@@ -4,7 +4,6 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import CreatePost from "./pages/CreatePost";
 import SinglePost from "./pages/SinglePost";
-import FilterPost from "./components/FilterPost";
 import { useEffect, useState } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "./firebase-config";
@@ -14,7 +13,6 @@ function App() {
   const [currentUserState, setCurrentUserState] = useState(
     localStorage.getItem("user")
   );
-  const [filterValue, setFilterValue] = useState("All");
 
   const logOut = () => {
     signOut(auth).then(() => {
@@ -22,10 +20,6 @@ function App() {
       setIsAuth(false);
       window.location.reload();
     });
-  };
-
-  const filterValueSelected = (filter) => {
-    setFilterValue(filter);
   };
 
   useEffect(() => {
@@ -38,14 +32,10 @@ function App() {
     <Router>
       <nav>
         <Link to="/"> Home </Link>
-        <FilterPost filterValueSelected={filterValueSelected} />
       </nav>
 
       <Routes>
-        <Route
-          path="/"
-          element={<Home isAuth={isAuth} filterValue={filterValue} />}
-        />
+        <Route path="/" element={<Home isAuth={isAuth} />} />
         <Route path="/createpost" element={<CreatePost isAuth={isAuth} />} />
         <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
         <Route path="/post/:id" element={<SinglePost isAuth={isAuth} />} />
