@@ -71,12 +71,7 @@ function Posts({ isAuth }) {
               )}
               <Link to={`/post/${post.id}`}>
                 <div className="postDetails">
-                  <img
-                    src={post.url}
-                    alt={post.title}
-                    width="300"
-                    height="200"
-                  />
+                  <img src={post.url} alt={post.title} />
                   <span>{post.title}</span>
                 </div>
               </Link>
