@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import "../styles/writePost.scss"
 
 function WritePost({ isAuth }) {
-  const [category, setCategory] = useState("A");
+  const [category, setCategory] = useState("Lifestyle");
   const [title, setTitle] = useState("");
   const [postText, setPostText] = useState("");
   const [author, setAuthor] = useState("");
