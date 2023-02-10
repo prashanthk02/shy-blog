@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/posts.scss";
+import "../styles/postItem.scss";
 
 export default function PostItem(props) {
   const id = props.id;
