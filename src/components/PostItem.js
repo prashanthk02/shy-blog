@@ -9,22 +9,16 @@ export default function PostItem(props) {
 
   return (
     <div className="post" key={id}>
-      <div className="postDate">
-        <h6>{date.toDateString()}</h6>
+      <div className="postIntro">
+        <h1 className="postTitle">{props.title}</h1>
+        <h6 className="postDate">{date.toDateString()}</h6>
+        <h6 className="postCategory">{props.category}</h6>
       </div>
-      <h6>{props.category}</h6>
-      <div className="title">
-        <h1>{props.title}</h1>
-      </div>
-      {props.url && (
-        <div className="postImage">
-          <img src={props.url} alt={props.title} />
-        </div>
-      )}
-      <div className="postText">{props.postText}</div>
-      <div className="author">
-        <h3>@{props.author}</h3>
-      </div>
+      <article className="postText">{props.postText}</article>
+        {props.url && (
+          <img className="postImage" src={props.url} alt={props.title} />
+        )}
+      <h3 className="postAuthor">@{props.author}</h3>
     </div>
   );
 }
