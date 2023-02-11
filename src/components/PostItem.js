@@ -11,8 +11,8 @@ export default function PostItem(props) {
     <div className="post" key={id}>
       <div className="postIntro">
         <h1 className="postTitle">{props.title}</h1>
-        <h6 className="postDate">{date.toDateString()}</h6>
-        <h6 className="postCategory">{props.category}</h6>
+        <h5 className="postDate">{date.toDateString()}</h5>
+        <h5 className="postCategory">{props.category}</h5>
       </div>
       <article className="postText">{props.postText}</article>
         {props.url && (
