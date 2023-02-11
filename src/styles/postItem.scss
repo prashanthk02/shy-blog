@@ -1,5 +1,5 @@
 .post {
-  border: 1px solid red;
+  // border: 1px solid red;
   border-radius: 4px;
   width: 100%;
   min-height: 100vh;
@@ -15,27 +15,31 @@
 }
 
 .postIntro {
-  border: 1px solid red;
+  // border: 1px solid red;
   grid-area: 1 / 1 / 2 / 6;
   height: 200px;
+  margin-left: 10px;
 }
 
 .postTitle {
-  border: 1px solid red;
+  // border: 1px solid red;
+  padding-left: 10px;
 }
 
 .postDate {
   margin-top: -10px;
-  border: 1px solid red;
+  padding-left: 15px;
+  // border: 1px solid red;
 }
 
 .postCategory {
   margin-top: -15px;
-  border: 1px solid red;
+  padding-left: 15px;
+  // border: 1px solid red;
 }
 
 .postImage {
-  border: 1px solid red;
+  // border: 1px solid red;
   border-radius: 2px;
   width: 480px;
   height: 320px;
@@ -44,14 +48,15 @@
 }
 
 .postText {
-  border: 1px solid red;
+  // border: 1px solid red;
   margin-left: 50px;
+  margin-top: -60px;
   padding: 10px;
   text-align: justify;
   grid-area: 2 / 1 / 3 / 2;
 }
 
 .postAuthor {
-  border: 1px solid red;
+  // border: 1px solid red;
   grid-area: 3 / 2 / 4 / 3;
 }
