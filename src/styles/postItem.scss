@@ -1,5 +1,4 @@
 .post {
-  // border: 1px solid red;
   border-radius: 4px;
   width: 100%;
   min-height: 100vh;
@@ -8,41 +7,33 @@
   top: 5%;
   z-index: 0;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: 3fr 2fr;
+  grid-template-rows: 0.5fr auto 0.4fr;
   grid-column-gap: 10px;
-  grid-row-gap: 5px;
+  grid-row-gap: 2px;
 }
 
 .postIntro {
-  // border: 1px solid red;
   grid-area: 1 / 1 / 2 / 6;
-  height: 200px;
-  margin-left: 10px;
-  position: absolute;
-  top: 5%;
-  // align-content: center;
+  margin-left: 50px;
+  align-self: center;
 }
 
 .postTitle {
-  // border: 1px solid red;
   padding-left: 10px;
 }
 
 .postDate {
   margin-top: -10px;
   padding-left: 15px;
-  // border: 1px solid red;
 }
 
 .postCategory {
   margin-top: -15px;
   padding-left: 15px;
-  // border: 1px solid red;
 }
 
 .postImage {
-  // border: 1px solid red;
   border-radius: 4px;
   width: 480px;
   height: 320px;
@@ -52,9 +43,7 @@
 }
 
 .postText {
-  // border: 1px solid red;
   margin-left: 50px;
-  margin-top: -60px;
   padding: 10px;
   font-size: 18px;
   text-align: justify;
