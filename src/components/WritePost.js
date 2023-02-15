@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { addDoc, collection, Timestamp } from "firebase/firestore";
 import { auth, db } from "../firebase-config";
 import { useNavigate } from "react-router-dom";
+import FroalaEditor from 'react-froala-wysiwyg';
 
 import "../styles/writePost.scss"
 
@@ -88,6 +89,8 @@ function WritePost({ isAuth }) {
 
         <button onClick={writePost}>Submit Post</button>
       </div>
+
+      <FroalaEditor className="editor" />
     </div>
   );
 }
