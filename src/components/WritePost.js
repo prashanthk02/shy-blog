@@ -3,6 +3,7 @@ import { addDoc, collection, Timestamp } from "firebase/firestore";
 import { auth, db } from "../firebase-config";
 import { useNavigate } from "react-router-dom";
 
+import MyEditor from "./MyEditor";
 import "../styles/writePost.scss"
 
 function WritePost({ isAuth }) {
@@ -84,6 +85,10 @@ function WritePost({ isAuth }) {
               setUrl(e.target.value);
             }}
           />
+        </div>
+        
+        <div className="editor" >
+          <MyEditor />
         </div>
 
         <button onClick={writePost}>Submit Post</button>
