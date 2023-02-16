@@ -9,6 +9,7 @@ export default function MyEditor() {
   );
 
   const editor = useRef(null);
+  console.log(editorState)
 
   // function focusEditor() {
   //   editor.current.focus();
