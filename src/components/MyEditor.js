@@ -11,6 +11,7 @@ export default function MyEditor() {
     EditorState.createEmpty()
   );
   const [convertedContent, setConvertedContent] = useState(null);
+  const [editorData, setEditorData] = useState(null);
 
   const editor = useRef(null);
 
@@ -25,9 +26,12 @@ export default function MyEditor() {
     };
   }
 
-const data = createMarkup(convertedContent)
+  useEffect(() => {
+    const data = createMarkup(convertedContent);
+    setEditorData(data.__html);
+  },[convertedContent]);
 
-console.log(data.__html)
+console.log(editorData);
 
   return (
     <div>
@@ -38,6 +42,7 @@ console.log(data.__html)
         editorClassName="editor-class"
         toolbarClassName="toolbar-class"
         onEditorStateChange={(editorState) => setEditorState(editorState)}
+        editorData={editorData}
         // toolbar={{
         //   options: ['inline', 'blockType']
         // }}
