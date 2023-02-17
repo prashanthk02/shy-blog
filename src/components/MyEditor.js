@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Editor } from "react-draft-wysiwyg";
 import { EditorState } from "draft-js";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import "../styles/editor.scss"
 
 export default function MyEditor() {
   const [editorState, setEditorState] = useState(() =>
@@ -28,6 +29,9 @@ export default function MyEditor() {
         editorClassName="editor-class"
         toolbarClassName="toolbar-class"
         onEditorStateChange={(editorState) => setEditorState(editorState)}
+        // toolbar={{
+        //   options: ['inline', 'blockType']
+        // }}
       />
     </div>
   );
