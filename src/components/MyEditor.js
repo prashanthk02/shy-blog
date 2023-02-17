@@ -25,6 +25,10 @@ export default function MyEditor() {
     };
   }
 
+const data = createMarkup(convertedContent)
+
+console.log(data.__html)
+
   return (
     <div>
       <Editor
@@ -38,10 +42,10 @@ export default function MyEditor() {
         //   options: ['inline', 'blockType']
         // }}
       />
-      <div
+      {/* <div
         className="preview"
         dangerouslySetInnerHTML={createMarkup(convertedContent)}
-      ></div>
+      ></div> */}
     </div>
   );
 }
