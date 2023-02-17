@@ -1,24 +1,29 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Editor } from "react-draft-wysiwyg";
 import { EditorState } from "draft-js";
+import { convertToHTML } from 'draft-convert';
+import DOMPurify from 'dompurify';
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-import "../styles/editor.scss"
+import "../styles/editor.scss";
 
 export default function MyEditor() {
   const [editorState, setEditorState] = useState(() =>
     EditorState.createEmpty()
   );
+  const [convertedContent, setConvertedContent] = useState(null);
 
   const editor = useRef(null);
-  console.log(editorState)
 
-  // function focusEditor() {
-  //   editor.current.focus();
-  // }
+  useEffect(() => {
+    let html = convertToHTML(editorState.getCurrentContent());
+    setConvertedContent(html);
+  }, [editorState]);
 
-  // useEffect(() => {
-  //   focusEditor();
-  // }, []);
+  function createMarkup(html) {
+    return {
+      __html: DOMPurify.sanitize(html),
+    };
+  }
 
   return (
     <div>
@@ -33,6 +38,10 @@ export default function MyEditor() {
         //   options: ['inline', 'blockType']
         // }}
       />
+      <div
+        className="preview"
+        dangerouslySetInnerHTML={createMarkup(convertedContent)}
+      ></div>
     </div>
   );
 }
