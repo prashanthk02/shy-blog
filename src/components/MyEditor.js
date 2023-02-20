@@ -6,7 +6,7 @@ import DOMPurify from 'dompurify';
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import "../styles/editor.scss";
 
-export default function MyEditor() {
+export default function MyEditor({setPostText}) {
   const [editorState, setEditorState] = useState(() =>
     EditorState.createEmpty()
   );
@@ -29,9 +29,8 @@ export default function MyEditor() {
   useEffect(() => {
     const data = createMarkup(convertedContent);
     setEditorData(data.__html);
+    setPostText(editorData);
   },[convertedContent]);
-
-console.log(editorData);
 
   return (
     <div>
@@ -42,15 +41,10 @@ console.log(editorData);
         editorClassName="editor-class"
         toolbarClassName="toolbar-class"
         onEditorStateChange={(editorState) => setEditorState(editorState)}
-        editorData={editorData}
         // toolbar={{
         //   options: ['inline', 'blockType']
         // }}
       />
-      {/* <div
-        className="preview"
-        dangerouslySetInnerHTML={createMarkup(convertedContent)}
-      ></div> */}
     </div>
   );
 }

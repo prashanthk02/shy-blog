@@ -57,7 +57,7 @@ function WritePost({ isAuth }) {
             }}
           />
         </div>
-        <div className="postText">
+        {/* <div className="postText">
           <label>Post: </label>
           <textarea
             placeholder="Post..."
@@ -66,7 +66,7 @@ function WritePost({ isAuth }) {
               setPostText(e.target.value);
             }}
           />
-        </div>
+        </div> */}
         <div className="authorText">
           <label>Author: </label>
           <input
@@ -88,7 +88,7 @@ function WritePost({ isAuth }) {
         </div>
         
         <div className="editor" >
-          <MyEditor />
+          <MyEditor setPostText={setPostText} />
         </div>
 
         <button onClick={writePost}>Submit Post</button>

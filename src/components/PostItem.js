@@ -1,3 +1,4 @@
+import DOMPurify from "dompurify";
 import React from "react";
 import "../styles/postItem.scss";
 
@@ -6,6 +7,13 @@ export default function PostItem(props) {
   const date = new Date(
     props.date.seconds * 1000 + props.date.nanoseconds / 1000000
   );
+  const postHtml = props.postText;
+
+  function createMarkup(html) {
+    return {
+      __html: DOMPurify.sanitize(html),
+    };
+  }
 
   return (
     <div className="post" key={id}>
@@ -14,10 +22,13 @@ export default function PostItem(props) {
         <h5 className="postDate">{date.toDateString()}</h5>
         <h5 className="postCategory">{props.category}</h5>
       </div>
-      <article className="postText">{props.postText}</article>
-        {props.url && (
-          <img className="postImage" src={props.url} alt={props.title} />
-        )}
+      <article
+        className="postText"
+        dangerouslySetInnerHTML={createMarkup(postHtml)}
+      ></article>
+      {props.url && (
+        <img className="postImage" src={props.url} alt={props.title} />
+      )}
       <h3 className="postAuthor">@{props.author}</h3>
     </div>
   );
