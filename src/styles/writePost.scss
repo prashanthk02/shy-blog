@@ -54,8 +54,10 @@
 }
 
 .editor {
-  border: 1px solid red;
   background-color: whitesmoke;
   width: auto;
-  min-height: 400px;
+
+  .editor-class {
+    min-height: 300px;
+  }
 }

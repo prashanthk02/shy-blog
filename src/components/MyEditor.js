@@ -41,6 +41,7 @@ export default function MyEditor({setPostText}) {
         editorClassName="editor-class"
         toolbarClassName="toolbar-class"
         onEditorStateChange={(editorState) => setEditorState(editorState)}
+        placeholder="Start writing your post..."
         // toolbar={{
         //   options: ['inline', 'blockType']
         // }}
