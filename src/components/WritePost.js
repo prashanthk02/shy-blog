@@ -41,7 +41,7 @@ function WritePost({ isAuth }) {
     <div className="cpPage">
       <h1>Create a Post</h1>
       <div className="cpContainer">
-        <div className="postDetails">
+        <div className="cpDetails">
         <div className="categoryText">
           <label>Category: </label>
           <select

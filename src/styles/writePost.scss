@@ -1,11 +1,10 @@
 .cpPage {
-  border: 1px solid red;
   background-color: #B8BDB5;
   width: 100%;
   min-height: 100vh;
   position: absolute;
   z-index: 1;
-  top: 7%;
+  top: 5%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,18 +24,17 @@
   }
 
   button {
-      margin: 10px;
-      padding: 5px;
-      font-size: 20px;
-      height: 40px;
-      width: 140px;
-      background-color: #889696;
-      border-radius: 4px;
+    margin: 10px;
+    padding: 5px;
+    font-size: 20px;
+    height: 40px;
+    width: 140px;
+    background-color: #889696;
+    border-radius: 4px;
   }
 }
 
-.postDetails {
-  border: 1px solid red;
+.cpDetails {
   display: flex;
   flex-direction: row;
   gap: 20px;
@@ -59,7 +57,7 @@
 
 .editor {
   background-color: whitesmoke;
-  width: auto;
+  width: 95vw;
 
   .editor-class {
     min-height: 300px;
