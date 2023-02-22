@@ -1,11 +1,11 @@
 .cpPage {
   border: 1px solid red;
+  background-color: #B8BDB5;
   width: 100%;
   min-height: 100vh;
   position: absolute;
   z-index: 1;
-  top: 7%;  
-  // left: 0%;
+  top: 7%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,8 +15,12 @@
     text-align: center;
   }
 
+  label {
+    font-size: 20px;
+  }
+
   input {
-    width: 200px;
+    width: 220px;
     height: 30px;
   }
 
@@ -33,20 +37,19 @@
 
 .postDetails {
   border: 1px solid red;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
 }
 
 .cpContainer {
-  background-color: #B8BDB5;
-  border-radius: 4px;
-  width: 100%;
-  min-height: 100vh;
-  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 30px;
-  margin-bottom: 50px;
 }
 
 .categoryText select {
@@ -60,5 +63,9 @@
 
   .editor-class {
     min-height: 300px;
+  }
+
+  .public-DraftStyleDefault-ltr {
+    font-size: 18px;
   }
 }
