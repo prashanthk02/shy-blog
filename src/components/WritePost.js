@@ -42,49 +42,49 @@ function WritePost({ isAuth }) {
       <h1>Create a Post</h1>
       <div className="cpContainer">
         <div className="cpDetails">
-        <div className="categoryText">
-          <label>Category: </label>
-          <select
-            onChange={(e) => {
-              setCategory(e.target.value);
-            }}
-          >
-            <option value="Lifestyle">Life Style</option>
-            <option value="Travel">Travel</option>
-            <option value="Food">Food</option>
-            <option value="Social">Social</option>
-          </select>
-        </div>
+          <div className="categoryText">
+            <label>Category: </label>
+            <select
+              onChange={(e) => {
+                setCategory(e.target.value);
+              }}
+            >
+              <option value="Lifestyle">Life Style</option>
+              <option value="Travel">Travel</option>
+              <option value="Food">Food</option>
+              <option value="Social">Social</option>
+            </select>
+          </div>
 
-        <div className="titleText">
-          <label>Title: </label>
-          <input
-            placeholder="Title..."
-            onChange={(e) => {
-              setTitle(e.target.value);
-            }}
-          />
-        </div>
+          <div className="titleText">
+            <label>Title: </label>
+            <input
+              placeholder="Title..."
+              onChange={(e) => {
+                setTitle(e.target.value);
+              }}
+            />
+          </div>
 
-        <div className="imgUrl">
-          <label>Image URL: </label>
-          <input
-            placeholder="url..."
-            onChange={(e) => {
-              setUrl(e.target.value);
-            }}
-          />
-        </div>
+          <div className="imgUrl">
+            <label>Image URL: </label>
+            <input
+              placeholder="url..."
+              onChange={(e) => {
+                setUrl(e.target.value);
+              }}
+            />
+          </div>
 
-        <div className="authorText">
-          <label>Author: </label>
-          <input
-            placeholder="Author..."
-            onChange={(e) => {
-              setAuthor(e.target.value);
-            }}
-          />
-        </div>
+          <div className="authorText">
+            <label>Author: </label>
+            <input
+              placeholder="Author..."
+              onChange={(e) => {
+                setAuthor(e.target.value);
+              }}
+            />
+          </div>
         </div>
 
         <div className="editor">
