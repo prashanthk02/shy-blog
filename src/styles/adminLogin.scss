@@ -1,7 +1,7 @@
 .loginForm {
   background-color: #D2D4C8;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,25 +9,28 @@
   gap: 15px;
 
   label {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   input {
-    width: 220px;
-    height: 20px;
+    width: 250px;
+    height: 30px;
+    font-size: 20px;
   }
 }
 
 .emailBox {
-  position: fixed;
-  left: 40%;
-  top: 40%;
+  border: 1px solid red;
+  position: relative;
+  left: 15px;
+  // top: 40%;
 }
 
 .pswdBox {
-  position: fixed;
-  left: 37.8%;
-  top: 45%;
+  border: 1px solid red;
+  // position: relative;
+  // left: 37.8%;
+  // top: 45%;
 }
 
 .loginBtn {
@@ -40,13 +43,17 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  position: fixed;
-  left: 45%;
-  top: 50%;
+  position: relative;
+  // left: 45%;
+  // top: 50%;
 
   &:hover {
     height: 40px;
     width: 100px;
     border: 1px solid #5F7470;
   }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 1023px){
+
 }
