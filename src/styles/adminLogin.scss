@@ -20,17 +20,12 @@
 }
 
 .emailBox {
-  border: 1px solid red;
   position: relative;
   left: 15px;
-  // top: 40%;
 }
 
 .pswdBox {
-  border: 1px solid red;
-  // position: relative;
-  // left: 37.8%;
-  // top: 45%;
+  position: relative;
 }
 
 .loginBtn {
@@ -44,8 +39,6 @@
   border-radius: 4px;
   cursor: pointer;
   position: relative;
-  // left: 45%;
-  // top: 50%;
 
   &:hover {
     height: 40px;
