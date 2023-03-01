@@ -2,6 +2,7 @@
   background-color: #B8BDB5;
   width: 100%;
   min-height: 100vh;
+  padding-top: 50px;
   padding-bottom: 50px;
   display: flex;
   flex-direction: column;
@@ -63,5 +64,21 @@
 
   .public-DraftStyleDefault-ltr {
     font-size: 18px;
+  }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 1023px){
+  .cpDetails {
+    flex-direction: column;
+  }
+
+  .titleText {
+    position: relative;
+    left: 30px;
+  }
+
+  .authorText {
+    position: relative;
+    left: 20px;
   }
 }
