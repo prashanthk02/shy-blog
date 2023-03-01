@@ -3,9 +3,11 @@
   width: 100%;
   min-height: 100vh;
   background-color: #D2D4C8;
-  position: absolute;
-  top: 5%;
-  z-index: 0;
+  // position: absolute;
+  // top: 5%;
+  // z-index: 0;
+  padding-top: 50px;
+  padding-bottom: 50px;
   display: grid;
   grid-template-columns: 3fr 2fr;
   grid-template-rows: 0.5fr auto 0.4fr;
@@ -53,7 +55,8 @@
 
 .postAuthor {
   grid-area: 3 / 2 / 4 / 3;
-  align-self: center;
+  align-self: flex-end;
+  justify-self: flex-end;
   margin-right: 30px;
 }
 
@@ -77,10 +80,5 @@
     margin: 10px;
     width: 90vw;
     height: 30vh;
-  }
-
-  .postAuthor {
-    align-self: flex-end;
-    margin-bottom: 40px;
   }
 }
