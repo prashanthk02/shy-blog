@@ -1,13 +1,16 @@
 @import 'variables';
 .wrapper-class {
   padding: 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid $c5;
+  border-radius: 4px;
 }
 .editor-class {
-  background-color:lightgray;
+  background-color: $c2;
   padding: 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid $c5;
+  border-radius: 2px;
 }
 .toolbar-class {
-  border: 1px solid #ccc;
+  border: 1px solid $c5;
+  border-radius: 2px;
 }
