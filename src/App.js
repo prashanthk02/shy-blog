@@ -42,17 +42,20 @@ function App() {
       </Routes>
 
       <footer>
+        <Link to="/"> Home </Link>
+        <Link to="/about"> About </Link>
         {!isAuth ? (
           <Link to="/login"> Login </Link>
         ) : (
           <>
             <Link to="/createpost"> Create Post </Link>
-            <p>{currentUserState.email}</p>
             <button className="logoutBtn" onClick={logOut}>
-              LogOut
+              Log out
             </button>
+            <p>Logged in as : {currentUserState.email}</p>
           </>
         )}
+        {/* <span> &copy; </span> */}
       </footer>
     </Router>
   );
