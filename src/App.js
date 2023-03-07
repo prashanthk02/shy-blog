@@ -13,6 +13,7 @@ function App() {
   const [currentUserState, setCurrentUserState] = useState(
     localStorage.getItem("user")
   );
+  const today = new Date();
 
   const logOut = () => {
     signOut(auth).then(() => {
@@ -55,7 +56,7 @@ function App() {
             <p>Logged in as : {currentUserState.email}</p>
           </>
         )}
-        {/* <span> &copy; </span> */}
+        <span> Copyright &copy; {today.getFullYear()} </span>
       </footer>
     </Router>
   );
