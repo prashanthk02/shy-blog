@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 import "../styles/posts.scss";
 import FilterPost from "./FilterPost";
+import Loader from "./Loader";
 
 function Posts({ isAuth }) {
   const [postList, setPostList] = useState([]);
@@ -49,36 +50,40 @@ function Posts({ isAuth }) {
       <div className="filter">
         <FilterPost filterValueSelected={filterValueSelected} />
       </div>
-      <div className="postCards">
-        {filteredPosts.map((post) => {
-          return (
-            <div
-              className="postCard"
-              key={post.id}
-              onClick={() =>
-                localStorage.setItem(post.id, JSON.stringify(post))
-              }
-            >
-              {isAuth && post.email === auth.currentUser.email && (
-                <button
-                  className="postDelete"
-                  onClick={() => {
-                    deletePost(post.id);
-                  }}
-                >
-                  X
-                </button>
-              )}
-              <Link to={`/post/${post.id}`}>
-                <div className="postDetails">
-                  <img src={post.url} alt={post.title} />
-                  <span>{post.title}</span>
-                </div>
-              </Link>
-            </div>
-          );
-        })}
-      </div>
+      {filteredPosts ? (
+        <div className="postCards">
+          {filteredPosts.map((post) => {
+            return (
+              <div
+                className="postCard"
+                key={post.id}
+                onClick={() =>
+                  localStorage.setItem(post.id, JSON.stringify(post))
+                }
+              >
+                {isAuth && post.email === auth.currentUser.email && (
+                  <button
+                    className="postDelete"
+                    onClick={() => {
+                      deletePost(post.id);
+                    }}
+                  >
+                    X
+                  </button>
+                )}
+                <Link to={`/post/${post.id}`}>
+                  <div className="postDetails">
+                    <img src={post.url} alt={post.title} />
+                    <span>{post.title}</span>
+                  </div>
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+      ) : (
+        <Loader />
+      )}
     </div>
   );
 }
