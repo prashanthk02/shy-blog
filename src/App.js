@@ -33,7 +33,7 @@ function App() {
   return (
     <Router>
       <nav>
-        <Link to="/"> Home </Link>
+        <Link to="/"> &#10000; &#128195; </Link>
       </nav>
 
       <Routes>

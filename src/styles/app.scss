@@ -14,6 +14,13 @@ nav {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+
+  a {
+    color: $c1;
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 32px;
+  }
 }
 
 a {
